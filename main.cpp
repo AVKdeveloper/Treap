@@ -1,5 +1,5 @@
 #include <fstream>
-#include "treap.h"
+#include "binary_tree.h"
 
 int main() {
 	std::fstream file;
@@ -10,7 +10,8 @@ int main() {
 	std::pair<int, int> data_of_node;
 	for (int i = 0; i < quantity_of_nodes; ++i) {
 		file >> data_of_node.first >> data_of_node.second;
-
+		tree.AddNode(data_of_node);
 	}
+	int height = tree.GetHeight();
 	return 0;
 }

@@ -1,10 +1,10 @@
-#ifndef TREAP_H
-#define TREAP_H
+#ifndef BINARY_TREE_H
+#define BINARY_TREE_H
 
 #include <memory> // shared_ptr 
 #include <algorithm>
 
-class Treap {
+class BinaryTree {
 	struct Node {
 		std::shared_ptr<Node> parent_;
 		std::shared_ptr<Node> left_;
@@ -16,9 +16,9 @@ class Treap {
 	};
 	std::shared_ptr<Node> root_;
 public:
-	Treap();
-	virtual void AddNode(const std::pair<int, int>& data_of_node);
+	BinaryTree();
+	void AddNode(const std::pair<int, int>& data_of_node);
 	int GetHeight() const;
 };
 
-#endif // TREAP_H
+#endif // BINARY_TREE_H
