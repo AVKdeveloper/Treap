@@ -1,3 +1,4 @@
+// Эта библиотека включает в себя класс бинарное дерево поиска.
 #ifndef BINARY_TREE_H
 #define BINARY_TREE_H
 

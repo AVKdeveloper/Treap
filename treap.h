@@ -1,3 +1,4 @@
+// Данная библиотека включает в себя класс дерамида.
 #ifndef TREAP_H
 #define TREAP_H
 
@@ -18,9 +19,14 @@ class Treap {
 public:
 	Treap();
 	Treap(std::shared_ptr<Node> node_ptr);
-	void AddNode(const std::pair<int, int>& data_of_node);
+	void NaiveTreeAddNode(const std::pair<int, int>& data_of_node);
 	int GetHeight() const;
 	std::pair<Treap, Treap> Split(const int& key);
+	void Insert(const std::pair<int, int>& data_of_node);
+
+	friend Treap Merge(Treap treap1, Treap treap2);
 };
+
+Treap Merge(Treap treap1, Treap treap2);
 
 #endif // TREAP_H

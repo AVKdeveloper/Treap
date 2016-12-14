@@ -7,6 +7,7 @@ BinaryTree::Node::Node(const int& data_of_node) {
 }
 
 int BinaryTree::Node::GetHeight() const {
+	// рекурсивный обход дерева для поиска наибольшей глубины
 	int left_height;
 	int right_height;
 	if (left_ == nullptr) {
@@ -27,6 +28,7 @@ BinaryTree::BinaryTree() {
 }
 
 void BinaryTree::AddNode(const int& data_of_node) {
+	// Добавление новой вершины в соответствующее место в дереве
 	std::shared_ptr<Node> node_ptr(new Node(data_of_node));
 	if (root_ == nullptr) {
 		root_ = node_ptr;

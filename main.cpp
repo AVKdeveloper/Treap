@@ -1,3 +1,5 @@
+// Эта программа выводит разницу высот обычного бинарного дерева поиска и дерамиды.
+
 #include <fstream>
 #include "binary_tree.h"
 #include "treap.h"
@@ -13,9 +15,13 @@ int main() {
 	for (int i = 0; i < quantity_of_nodes; ++i) {
 		file >> data_of_node.first >> data_of_node.second;
 		tree.AddNode(data_of_node.first);
-		treap.AddNode(data_of_node);
+		treap.Insert(data_of_node);
 	}
-	int height = tree.GetHeight();
-	std::pair<Treap, Treap> treaps = treap.Split(25);
+	file.close();
+	int height_tree = tree.GetHeight();
+	int height_treap = treap.GetHeight();
+	file.open("output.txt", std::fstream::out);
+	file << height_tree - height_treap;
+	file.close();
 	return 0;
 }
